@@ -5,7 +5,8 @@ import { ITableProps } from '../types/TableProps'
 export default function Table(props: ITableProps) {
     const [selectedDate, setSelectedDate] = useState<string>('21/04')
     const [typeOfBoard, setTypeOfBoard] = useState<string>('arrive')
-    
+    console.log(selectedDate)
+
     return (
         <div>
             <div className="container">
