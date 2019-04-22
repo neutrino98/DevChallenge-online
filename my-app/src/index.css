@@ -13,56 +13,86 @@
 }
 
 .table_heading_left {
-  background-color: rgb(117, 209, 239);
-  color: rgb(255, 255, 255);
   text-align: right;
   font-size: 1rem;
-  font-weight: 600; 
+  font-weight: 600;
+}
+
+.table_heading_left  .departure {
+  background-color: rgb(255, 255, 255);
+  color: rgb(117, 209, 239);
+  padding-right: .5rem;
+}
+
+.table_heading_left  .arrive {
+  background-color: rgb(117, 209, 239);
+  color: rgb(255, 255, 255);
   border-top-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-bottom-right-radius: 1rem; 
+  padding-right: .5rem;
 }
 
 .table_heading_left:hover {
+  cursor: pointer;
+}
+
+.table_heading_left .arrive:hover {
   background-color: rgb(30, 183, 238);
   cursor: pointer; 
 }
 
 .table_heading_right {
-  background-color: rgb(255, 255, 255); 
-  color: rgb(30, 183, 238);
   text-align: left; 
   font-size: 1rem;
   font-weight: 600; 
-  border-top-right-radius: 1rem; 
+}
 
+.table_heading_right  .departure {
+  background-color: rgb(117, 209, 239); 
+  color: rgb(255, 255, 255); 
+  border-top-right-radius: 1rem; 
+  border-bottom-left-radius: 1rem; 
+  padding-left: .5rem;
+}
+
+.table_heading_right  .arrive {
+  background-color: rgb(255, 255, 255); 
+  color: rgb(30, 183, 238);  
+  padding-left: .5rem; 
 }
 
 .table_heading_right:hover {
   cursor: pointer;
 }
 
+.table_heading_right .departure:hover {
+  cursor: pointer;
+  background-color: rgb(30, 183, 238);
+}
+
 .table_body_head {
-  margin-top: 0.8rem;
+  margin-top: .8rem;
+  margin-bottom: .5rem;
 }
 
 .table_body {
-  font-size: 0.6rem;
+  font-size: .6rem;
   text-align: left; 
   font-weight: 600;
   color: gray;
 }
 
 .table_body_row {
-  font-size: 0.7rem; 
+  font-size: .7rem; 
   background-color: rgb(255, 255, 255);
   height: 3rem;
 }
 
 .table_body_row_item {
-  font-size: 0.7rem;
+  font-size: .7rem;
   text-align: left; 
   font-weight: 400;
-  margin-top: 0.6rem;
+  margin-top: .6rem;
 }
 
 .table_body_row:nth-child(2n) {
@@ -70,6 +100,18 @@
 } 
 
 .table_body_row:hover {
-  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 .165rem .3rem rgba(0,0,0,.2);
 }
 
+.table_date_choise {
+  color: gray; 
+  margin-top: 1rem; 
+  margin-bottom: .6rem;
+  font-weight: 700;
+  height: 3rem;
+  position: relative;
+}
+
+.table_date_choise:hover {
+  cursor: pointer;
+}
