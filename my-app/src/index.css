@@ -112,6 +112,11 @@
   position: relative;
 }
 
+.table_date_choise .selected {
+  color: rgb(30, 183, 238); 
+}
+
+
 .table_date_choise:hover {
   cursor: pointer;
 }

@@ -3,9 +3,7 @@ import DateChoise from '../components/DateChoise'
 import { ITableProps } from '../types/TableProps'
 
 export default function Table(props: ITableProps) {
-    const [selectedDate, setSelectedDate] = useState<string>('21/04')
     const [typeOfBoard, setTypeOfBoard] = useState<string>('arrive')
-    console.log(selectedDate)
 
     return (
         <div>
@@ -23,8 +21,8 @@ export default function Table(props: ITableProps) {
                     </div>
                 </div>
                 <DateChoise
-                    value={selectedDate}
-                    onDateChange={setSelectedDate}
+                    value={props.date}
+                    onDateChange={props.onDateChange}
                 />
                 <div className="row table_body_head">
                     <div className="col-md-2 table_body">Терминал</div>                
