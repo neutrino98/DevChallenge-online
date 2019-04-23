@@ -5,7 +5,6 @@ import { TableItem } from '../types/TableItem'
 import { useFetch } from '../helpers/useFetch'
 import {decodeTableDepartureItem, decodeTableArrivalItem} from '../helpers/decoders'
 
-
 function filteringBoards(searchVal: string, items: Array<TableItem>): Array<TableItem> {
   if(searchVal === "") return items
   if(items.length === 0) return items

@@ -20,6 +20,9 @@ export default function Table(props: ITableProps) {
                         </div>                        
                     </div>
                 </div>
+                <div className="row">
+                    <div className="col-md-6 table_search_bar_heading">Поиск рейса</div>
+                </div>
                 <SearchBar value={props.searchVal} setSearchValue={props.onChangeInputSearchVal} submitSearch={props.submitSearch}/>
                 <DateChoise
                     value={props.date}
