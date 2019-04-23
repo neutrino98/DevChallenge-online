@@ -35,9 +35,7 @@ export default function Schedule() {
     const [selectedDate, setSelectedDate] = useState<string>(today)
     const [typeOfBoard, setTypeOfBoard] = useState<string>('arrive')
     const [searchVal, setSearchVal] = useState<string>('')
-    const [inputSearchVal, onChangeInputSearchVal] = useState<string>('')
-
-   
+    const [inputSearchVal, onChangeInputSearchVal] = useState<string>('') 
 
     const tableItems: any = useFetch(`https://api.iev.aero/api/flights/${selectedDate}`)
     const arrivalBoards: Array<TableItem> = tableItems ? tableItems.body.arrival.map((row: any) => decodeTableItem(row)) : []
