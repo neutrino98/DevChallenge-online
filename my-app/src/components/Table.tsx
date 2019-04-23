@@ -1,25 +1,26 @@
 import React, { useState, FunctionComponent } from 'react';
 import DateChoise from '../components/DateChoise'
+import SearchBar from '../components/SearchBar'
 import { ITableProps } from '../types/TableProps'
 
 export default function Table(props: ITableProps) {
-    const [typeOfBoard, setTypeOfBoard] = useState<string>('arrive')
 
     return (
         <div>
             <div className="container">
                 <div className="row table_heading">
-                    <div className="col-md-6 table_heading_left" onClick={() => setTypeOfBoard('departure')}>
-                        <div className={typeOfBoard}>
+                    <div className="col-md-6 table_heading_left" onClick={() => props.setTypeOfBoard('departure')}>
+                        <div className={props.typeOfBoard}>
                             Вылет
                         </div>
                     </div>
-                    <div className="col-md-6 table_heading_right" onClick={() => setTypeOfBoard('arrive')}>
-                        <div className={typeOfBoard}>
+                    <div className="col-md-6 table_heading_right" onClick={() => props.setTypeOfBoard('arrive')}>
+                        <div className={props.typeOfBoard}>
                             Прилет
                         </div>                        
                     </div>
                 </div>
+                <SearchBar value={props.searchVal} setSearchValue={props.onChangeInputSearchVal} submitSearch={props.submitSearch}/>
                 <DateChoise
                     value={props.date}
                     onDateChange={props.onDateChange}

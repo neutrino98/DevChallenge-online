@@ -1,8 +1,8 @@
 export interface TableItem {
-    terminal: String, 
-    time: String,
-    destination: String,
-    status: String, 
-    airline: String, 
-    flight: String
+    terminal: string, 
+    time: string,
+    destination: string,
+    status: string, 
+    airline: string, 
+    flight: string
 }
