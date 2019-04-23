@@ -1,25 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Table from '../components/Table'
-import { TableItemListStub } from '../Stub'
 import { today } from '../helpers/Date'
 import { TableItem } from '../types/TableItem'
 import { useFetch } from '../helpers/useFetch'
+import {decodeTableDepartureItem, decodeTableArrivalItem} from '../helpers/decoders'
 
-
-function decodeTableItem(row: any): TableItem {
-  let time =  new Date(row.timeToStand)
-  let minutes = time.getMinutes()
-  let viewMinutes = (minutes === 0) ? minutes + '0' : minutes  
-  
-  return {
-    terminal: row.term,
-    time: time.getHours() + ":" + viewMinutes,
-    destination: row["airportFromID.city_en"],
-    status: row.status, 
-    airline: "WizAir",//row.airline,//["en.name"],
-    flight: row.planeNo
-  }
-}
 
 function filteringBoards(searchVal: string, items: Array<TableItem>): Array<TableItem> {
   if(searchVal === "") return items
@@ -38,8 +23,8 @@ export default function Schedule() {
     const [inputSearchVal, onChangeInputSearchVal] = useState<string>('') 
 
     const tableItems: any = useFetch(`https://api.iev.aero/api/flights/${selectedDate}`)
-    const arrivalBoards: Array<TableItem> = tableItems ? tableItems.body.arrival.map((row: any) => decodeTableItem(row)) : []
-    const departureBoards: Array<TableItem> = tableItems ? tableItems.body.departure.map((row: any) => decodeTableItem(row)) : []
+    const arrivalBoards: Array<TableItem> = tableItems ? tableItems.body.arrival.map((row: any) => decodeTableArrivalItem(row)) : []
+    const departureBoards: Array<TableItem> = tableItems ? tableItems.body.departure.map((row: any) => decodeTableDepartureItem(row)) : []
     
 
     function getTableItemsByTypeOfBoard():Array<TableItem> {
