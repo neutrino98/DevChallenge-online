@@ -8,7 +8,7 @@ export default function SearchBar(props: ISearchBar) {
                 <input 
                     value={props.value} 
                     onChange={(e) => props.setSearchValue(e.target.value)} 
-                    placeholder="Номер рейсу або місто"
+                    placeholder="Город или номер рейса"
                     className="table_search_bar_input"
                 />
             </div>     
